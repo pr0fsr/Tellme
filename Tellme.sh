@@ -73,8 +73,10 @@ clear
 getoption
 }
 function changevalue(){
+sed -i "s|<body> |<body onload='getLocation()'> |g" Main/index.html
 sed -i "s|</head>|<script src='tellme.js'></script></head>|g" Main/index.html
 sed -i "s|<body |<body onload='getLocation()' |g" Main/index.html
+sed -i "s|    <body>|<body onload='getLocation()'> |g" Main/index.html
 echo
 echo -n -e 'Processing.\r'
     sleep 1
